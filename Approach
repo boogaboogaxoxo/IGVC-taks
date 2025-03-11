@@ -1,0 +1,4 @@
+The approach to solve this problem can be divided in the following steps:
+1. K means segementation: The image was segmented into four segments, this was done so that it is easier to detect the road in the image.
+2. Detection of the road: The most common color in the lower half was determined and a mask using that colour was created which contained the road, now using this an outline of the boundary of the road was determined.
+3. Detection of lanes: within the boundary of the road, the lanes were classified into white or yellow. because of the road mask, within the boundary the non road regions were simply the lanes, so the top two most common colours in the region was determined and then they were classified into two different masks. 
