@@ -1,0 +1,20 @@
+The code for this question needs debugging and does not work correctly yet, however the algortihm is correct, it is assumed that the size of the matrix, the matrix and initial orientation and direction of movement
+ of bot has been given:
+1. define a function called "pathlength" it returns something called pathvar, what pathlength does is for the lane the bot is currently in, it calculates the maximum distance it can travel unobstructed in each subpath
+   and whether the final obstruction is a 1 or 2, then it calculates on which subpath is this distance the longest and returns the:
+   a. index of subpath
+   b. distance to travel on subpath
+   c. whether you end before an obstacle or at the end of the lane
+2. define a move function, what this does is you give is your current positon and the pathvariables, it assumes your current speed is 0, what it overall does is first it increases ypur speed then decrease 
+   it back to 0 once you reach your end, after it has moved you to the desired subpath. 
+   so for example you have to move 6 steps, then first it increases speed to 1, moves one step, increase speed to 2, moves 2 steps, in each step increasing coordinate by 2, then decreases speed to 1 and moves 1 step
+   and finally decreases speed back to 0.
+3. a lanpos function which basically determines the idex of the subpath you are currently on in your lane.
+4. the main loop runs like this
+  a. find your lanepos
+  b. get pathvariables
+  c. move 
+  d. repeat until you reach end of lane, then you turn
+  e. repeat this process 4 times.
+5. finally you need to move back to 3, this part of code is incomplete, but the basic idea was the same, you first find the lane on which 3 is, find how far it is ignoring the obstacles call this D, find the subpath
+that has maximum distance less than or equal to D, move and repeat until you get on the same level as 3, then move to 3. 
